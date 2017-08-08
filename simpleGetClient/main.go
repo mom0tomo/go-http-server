@@ -6,6 +6,7 @@ import (
 	"net/http"
 )
 
+// use like "$ curl https://google.com"
 func main() {
 	resp, err := http.Get("https://google.com")
 	if err != nil {
