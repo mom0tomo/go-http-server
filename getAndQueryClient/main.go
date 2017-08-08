@@ -8,7 +8,7 @@ import (
 	"net/url"
 )
 
-// use like "$ curl -G --data-urlencode "query=hello world" http://google.com"
+// use like "$ curl -G --data-urlencode "query=hello world" http:/localhost:18888"
 func main() {
 	// declare query string
 	values := url.Values{
@@ -17,7 +17,7 @@ func main() {
 	}
 
 	// add query string at the end of URL
-	resp, err := http.Get("https://google.com" + "?" + values.Encode())
+	resp, err := http.Get("http://localhost:18888" + "?" + values.Encode())
 	defer resp.Body.Close()
 	if err != nil {
 		panic(err)
@@ -29,5 +29,4 @@ func main() {
 		panic(err)
 	}
 	log.Println(string(body))
-	log.Println("Header:", resp.Header)
 }

@@ -6,9 +6,9 @@ import (
 	"net/http"
 )
 
-// use like "$ curl https://google.com"
+// use like "$ curl http://localhost:18888"
 func main() {
-	resp, err := http.Get("https://google.com")
+	resp, err := http.Get("http://localhost:18888")
 	if err != nil {
 		panic(err)
 	}
@@ -19,7 +19,7 @@ func main() {
 		panic(err)
 	}
 
-	// bodyの内容をstring型で取得
+		// bodyの内容をstring型で取得
 	log.Println(string(body))
 	// ステータスコードをstring型で取得
 	log.Println("Status:", resp.Status)
